@@ -19,11 +19,4 @@ describe Player do
       expect{ subject.reduce_hp }.to change{ subject.hp }.by -10
     end
   end
-
-  describe '#attack' do
-    it 'attacks another player' do
-      expect(player).to receive(:reduce_hp)
-      subject.attack(player)
-    end
-  end
 end
