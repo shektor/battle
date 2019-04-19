@@ -1,5 +1,5 @@
-<h1><%= @player_1.name + ' vs ' + @player_2.name + ' (' + @player_2.hp.to_s + ' HP)'%></h1>
+<h1><%= @game.player_1.name + ' vs ' + @game.player_2.name + ' (' + @game.player_2.hp.to_s + ' HP)'%></h1>
 
-<a href="attack">Attack <%= @player_2.name %></a>
+<a href="attack">Attack <%= @game.player_2.name %></a>
 
-<%= @player_2.name %> was just attacked!
+<%= @game.player_2.name %> was just attacked!
