@@ -1,1 +1,5 @@
-<%= @player_2_name %> was just attacked!
+<h1><%= @player_1.name + ' vs ' + @player_2.name + ' (' + @player_2.hp.to_s + ' HP)'%></h1>
+
+<a href="attack">Attack <%= @player_2.name %></a>
+
+<%= @player_2.name %> was just attacked!
