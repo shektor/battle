@@ -6,6 +6,9 @@ class Battle < Sinatra::Base
 
 enable :sessions
 
+  before do
+    @game = Game.get
+  end
 
   get '/' do
     erb(:index)
@@ -17,12 +20,10 @@ enable :sessions
   end
 
   get '/play' do
-    @game = Game.get
     erb(:play)
   end
 
   get '/attack' do
-    @game = Game.get
     @game.attack(@game.player_2)
     @game.switch_roles
     erb(:attack)
