@@ -23,6 +23,7 @@ enable :sessions
 
   get '/attack' do
     $game.attack($game.player_2)
+    $game.switch_roles
     @game = $game
     erb(:attack)
   end
