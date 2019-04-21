@@ -12,19 +12,19 @@ enable :sessions
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player_1_name]),Player.new(params[:player_2_name]))
+    @game = Game.create(Player.new(params[:player_1_name]),Player.new(params[:player_2_name]))
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.get
     erb(:play)
   end
 
   get '/attack' do
-    $game.attack($game.player_2)
-    $game.switch_roles
-    @game = $game
+    @game = Game.get
+    @game.attack(@game.player_2)
+    @game.switch_roles
     erb(:attack)
   end
 

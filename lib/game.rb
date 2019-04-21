@@ -1,4 +1,13 @@
 class Game
+@game = nil
+
+  def self.get
+    @game
+  end
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
 
   attr_reader :player_1, :player_2, :turn, :opponent
 
